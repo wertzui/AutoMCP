@@ -68,6 +68,9 @@ public class ODataQueryOptionsJsonConverter<T> : JsonConverter<ODataQueryOptions
         var queryParameters = JsonSerializer.Deserialize<Dictionary<string, object>>(ref reader, _jsonOptions) ?? [];
         var stringQueryParameters = queryParameters.ToDictionary(kvp => kvp.Key, kvp => kvp.Value?.ToString() ?? string.Empty);
 
+        var oDataQueryOptions = new ODataQueryOptions<T>(stringQueryParameters);
+        return oDataQueryOptions;
+
         return _oDataQueryOptionsFactory.Create<T>(stringQueryParameters);
     }
 

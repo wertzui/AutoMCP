@@ -33,7 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.AspNetCore.OData" Version="9.4.1" />
+      <PackageReference Include="Microsoft.AspNetCore.OData" Version="9.4.1-Nightly202511050747" />
     </ItemGroup>
 
 </Project>
